@@ -1,0 +1,40 @@
+/**
+    Especifidad(0,0,1)
+**/
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+
+}
+/**
+    Especifidad(0,0,1)
+**/
+h1{
+    font-size: 2em;
+    align-self: center;
+    background-color: darkgrey;
+    width: max-content;
+    padding: 2em;
+    border-radius: 0.75em;
+    border: solid black 2px;
+    margin: 0em;
+   
+}
+/**
+    Especifidad(0,1,1)
+**/
+p:first-of-type{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-self: center;
+}
+p,pre{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+pre{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
