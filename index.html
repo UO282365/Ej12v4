@@ -1,0 +1,267 @@
+<!DOCTYPE HTML><!--Indica que el siguiente documento es HTML-->
+
+<html lang="es"><!--Indica que esta escrito en castellano--><head><!--Indica especificaciones del archivo-->
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8">
+    <title>Ejercicio12</title>
+    <!--Metadato-->
+    <!--Metadatos de los documentos HTML5-->
+    <meta name="author" content="Adrián Vega">
+    <meta name="description" content="Ejercicio 12 muestra datos de archivos subidos">
+    <meta name="keywords" content="api,javascript,jquery,file">
+    <!--Añadimos ventana grafica-->
+    <!--Definición de la ventana gráfica-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
+    <link rel="stylesheet" type="text/css" href="Ejercicio12.css">   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="Ejercicio12.js"></script>
+</head>
+<body>
+    <h1>Ej12</h1>
+    <p>Ejercicio que muestra datos sobre archivos</p>
+    <form>
+        <input type="file" id="examinar" onchange="ej12.mostrar(this.files);" multiple="">
+        <label for="examinar">Examinar</label>
+    </form>
+    <main><p>Nombre del archivo: Ejemplo.json</p><p>Tamaño del archivo:    69 bytes</p><p>Tipo del archivo: application/json</p><p>Nombre del archivo: Ejemplo.txt</p><p>Tamaño del archivo:    32 bytes</p><p>Tipo del archivo: text/plain</p><p>Nombre del archivo: Ejemplo.xml</p><p>Tamaño del archivo:    9111 bytes</p><p>Tipo del archivo: text/xml</p><p>Contenido de: Ejemplo.json</p><pre>{
+    "nombre": "John",
+    "edad": 22,
+    "genero": "male",
+
+}</pre><p>Contenido de: Ejemplo.txt</p><pre>este
+es
+un archivo
+de ejemplo</pre><p>Contenido de: Ejemplo.xml</p><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no" ?&gt;
+&lt;red xsi:schemaLocation = "http://tempuri.org/red red.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://tempuri.org/red"&gt;
+	&lt;personas&gt;
+		&lt;persona&gt;
+			&lt;datos&gt;
+				&lt;nombre&gt;Adrián&lt;/nombre&gt;
+				&lt;apellidos&gt;Vega Sánchez&lt;/apellidos&gt;
+				&lt;nacimiento&gt;2002-12-17&lt;/nacimiento&gt;
+				&lt;lugarnacimiento&gt;Gijón&lt;/lugarnacimiento&gt;
+				&lt;coordenadanacimiento&gt;
+					&lt;coordenada longitud="43.52490287564783" latitud="-5.6079458820930945" altitud="5"/&gt;
+				&lt;/coordenadanacimiento&gt;
+				&lt;residencia&gt;Gijón&lt;/residencia&gt;
+				&lt;coordenadaresidencia&gt;
+					&lt;coordenada longitud="43.53745721646162" latitud="-5.6636499976947405" altitud="5"/&gt;
+				&lt;/coordenadaresidencia&gt;
+				&lt;foto&gt;multimedia/imagenadrian.jpg&lt;/foto&gt;
+				&lt;comentarios&gt;¡Buena foto!&lt;/comentarios&gt;
+			&lt;/datos&gt;
+			&lt;persona&gt;
+				&lt;datos&gt;
+					&lt;nombre&gt;Ivan&lt;/nombre&gt;
+					&lt;apellidos&gt;Valbuena Menendez&lt;/apellidos&gt;
+					&lt;nacimiento&gt;2002-04-04&lt;/nacimiento&gt;
+					&lt;lugarnacimiento&gt;Gijón&lt;/lugarnacimiento&gt;
+					&lt;coordenadanacimiento&gt;
+						&lt;coordenada longitud="43.52490287564783" latitud="-5.6079458820930945" altitud="5"/&gt;
+					&lt;/coordenadanacimiento&gt;
+					&lt;residencia&gt;Gijón&lt;/residencia&gt;
+					&lt;coordenadaresidencia&gt;
+						&lt;coordenada longitud="43.54001987970251" latitud="-5.704907733980023" altitud="5"/&gt;
+					&lt;/coordenadaresidencia&gt;
+					&lt;foto&gt;multimedia/imagenivan.jpg&lt;/foto&gt;
+					&lt;video&gt;video1.1&lt;/video&gt;
+					&lt;video&gt;video1.2&lt;/video&gt;
+					&lt;video&gt;video1.3&lt;/video&gt;
+					&lt;comentarios&gt;Echa un overwatch&lt;/comentarios&gt;
+				&lt;/datos&gt;
+				&lt;persona&gt;
+					&lt;datos&gt;
+						&lt;nombre&gt;Jorge&lt;/nombre&gt;
+						&lt;apellidos&gt;Málaga De Jong&lt;/apellidos&gt;
+						&lt;nacimiento&gt;2002-10-29&lt;/nacimiento&gt;
+						&lt;lugarnacimiento&gt;La Haya&lt;/lugarnacimiento&gt;
+						&lt;coordenadanacimiento&gt;
+							&lt;coordenada longitud="52.05542751893124" latitud="4.263438981298411" altitud="2"/&gt;
+						&lt;/coordenadanacimiento&gt;
+						&lt;residencia&gt;Gijón&lt;/residencia&gt;
+						&lt;coordenadaresidencia&gt;
+							&lt;coordenada longitud="43.53666292540062" latitud="-5.689804215230091" altitud="5"/&gt;
+						&lt;/coordenadaresidencia&gt;
+						&lt;foto&gt;multimedia/imagenjorge.jpg&lt;/foto&gt;
+						&lt;comentarios&gt;Hola jorge&lt;/comentarios&gt;
+					&lt;/datos&gt;
+				&lt;/persona&gt;&lt;!--Amigo 1.1--&gt;
+				&lt;persona&gt;
+					&lt;datos&gt;
+						&lt;nombre&gt;Diego&lt;/nombre&gt;
+						&lt;apellidos&gt;García&lt;/apellidos&gt;
+						&lt;nacimiento&gt;2002-07-05&lt;/nacimiento&gt;
+						&lt;lugarnacimiento&gt;Gijón&lt;/lugarnacimiento&gt;
+						&lt;coordenadanacimiento&gt;
+							&lt;coordenada longitud="43.52490287564783" latitud="-5.6079458820930945" altitud="5"/&gt;
+						&lt;/coordenadanacimiento&gt;
+						&lt;residencia&gt;Gijón&lt;/residencia&gt;
+						&lt;coordenadaresidencia&gt;
+							&lt;coordenada longitud="43.52914064869585" latitud="-5.6692118242496266" altitud="5"/&gt;
+						&lt;/coordenadaresidencia&gt;
+						&lt;foto&gt;multimedia/imagendiego.jpg&lt;/foto&gt;
+						&lt;comentarios&gt;¿Donde estuviste ayer?&lt;/comentarios&gt;
+					&lt;/datos&gt;
+				&lt;/persona&gt;&lt;!--Amigo 1.2--&gt;
+				&lt;persona&gt;
+					&lt;datos&gt;
+						&lt;nombre&gt;Mario&lt;/nombre&gt;
+						&lt;apellidos&gt;Solar&lt;/apellidos&gt;
+						&lt;nacimiento&gt;2002-06-25&lt;/nacimiento&gt;
+						&lt;lugarnacimiento&gt;Gijón&lt;/lugarnacimiento&gt;
+						&lt;coordenadanacimiento&gt;
+							&lt;coordenada longitud="3" latitud="4" altitud="5"/&gt;
+						&lt;/coordenadanacimiento&gt;
+						&lt;residencia&gt;Gijón&lt;/residencia&gt;
+						&lt;coordenadaresidencia&gt;
+							&lt;coordenada longitud="43.5283734729297" latitud="-5.667917658434702" altitud="5"/&gt;
+						&lt;/coordenadaresidencia&gt;
+						&lt;foto&gt;multimedia/imagenmario.jpg&lt;/foto&gt;
+						&lt;comentarios&gt;Vaya perrin&lt;/comentarios&gt;
+					&lt;/datos&gt;
+				&lt;/persona&gt;&lt;!--Amigo 1.3--&gt;
+			&lt;/persona&gt;&lt;!--Amigo 1--&gt;
+				
+			&lt;persona&gt;
+				&lt;datos&gt;
+					&lt;nombre&gt;Marcos&lt;/nombre&gt;
+					&lt;apellidos&gt;Alonso&lt;/apellidos&gt;
+					&lt;nacimiento&gt;2003-01-10&lt;/nacimiento&gt;
+					&lt;lugarnacimiento&gt;Avilés&lt;/lugarnacimiento&gt;
+					&lt;coordenadanacimiento&gt;
+						&lt;coordenada longitud="43.55176542579462" latitud="-5.935643372570052" altitud="5"/&gt;
+					&lt;/coordenadanacimiento&gt;
+					&lt;residencia&gt;Gijón&lt;/residencia&gt;
+					&lt;coordenadaresidencia&gt;
+						&lt;coordenada longitud="43.54541128448534" latitud="-5.806202448378604" altitud="5"/&gt;
+					&lt;/coordenadaresidencia&gt;
+					&lt;foto&gt;multimedia/imagenmarcos.jpg&lt;/foto&gt;
+					&lt;comentarios&gt;¿Mañana q haces?&lt;/comentarios&gt;
+				&lt;/datos&gt;
+				&lt;persona&gt;
+					&lt;datos&gt;
+						&lt;nombre&gt;Dario&lt;/nombre&gt;
+						&lt;apellidos&gt;Díaz Higuera&lt;/apellidos&gt;
+						&lt;nacimiento&gt;2001-11-18&lt;/nacimiento&gt;
+						&lt;lugarnacimiento&gt;Gijón&lt;/lugarnacimiento&gt;
+						&lt;coordenadanacimiento&gt;
+							&lt;coordenada longitud="43.55176542579462" latitud="-5.935643372570052" altitud="5"/&gt;
+						&lt;/coordenadanacimiento&gt;
+						&lt;residencia&gt;Gijón&lt;/residencia&gt;
+						&lt;coordenadaresidencia&gt;
+							&lt;coordenada longitud="43.54621622153722" latitud="-5.631399179509373" altitud="5"/&gt;
+						&lt;/coordenadaresidencia&gt;
+						&lt;foto&gt;multimedia/imagendario.jpg&lt;/foto&gt;
+						&lt;comentarios&gt;Jesse pinkman???&lt;/comentarios&gt;
+					&lt;/datos&gt;
+				&lt;/persona&gt;&lt;!--Amigo 2.1--&gt;
+				&lt;persona&gt;
+					&lt;datos&gt;
+						&lt;nombre&gt;Ángel&lt;/nombre&gt;
+						&lt;apellidos&gt;Malnero&lt;/apellidos&gt;
+						&lt;nacimiento&gt;2002-01-22&lt;/nacimiento&gt;
+						&lt;lugarnacimiento&gt;Gijón&lt;/lugarnacimiento&gt;
+						&lt;coordenadanacimiento&gt;
+							&lt;coordenada longitud="43.55176542579462" latitud="-5.935643372570052" altitud="5"/&gt;
+						&lt;/coordenadanacimiento&gt;
+						&lt;residencia&gt;Gijón&lt;/residencia&gt;
+						&lt;coordenadaresidencia&gt;
+							&lt;coordenada longitud="43.552026902990605" latitud="-5.702656085167726" altitud="5"/&gt;
+						&lt;/coordenadaresidencia&gt;
+						&lt;foto&gt;multimedia/imagenangel.jpg&lt;/foto&gt;
+						&lt;comentarios&gt;¿Mañana quedas?&lt;/comentarios&gt;
+					&lt;/datos&gt;
+				&lt;/persona&gt;&lt;!--Amigo 2.2--&gt;
+				&lt;persona&gt;
+					&lt;datos&gt;
+						&lt;nombre&gt;Guillermo&lt;/nombre&gt;
+						&lt;apellidos&gt;Llera&lt;/apellidos&gt;
+						&lt;nacimiento&gt;2003-09-13&lt;/nacimiento&gt;
+						&lt;lugarnacimiento&gt;Gijón&lt;/lugarnacimiento&gt;
+						&lt;coordenadanacimiento&gt;
+							&lt;coordenada longitud="43.55176542579462" latitud="-5.935643372570052" altitud="5"/&gt;
+						&lt;/coordenadanacimiento&gt;
+						&lt;residencia&gt;Gijón&lt;/residencia&gt;
+						&lt;coordenadaresidencia&gt;
+							&lt;coordenada longitud="43.53064475909135" latitud="-5.668530339908545" altitud="5"/&gt;
+						&lt;/coordenadaresidencia&gt;
+						&lt;foto&gt;multimedia/imagenguillermo.jpg&lt;/foto&gt;
+						&lt;comentarios&gt;Ayer te vi&lt;/comentarios&gt;
+					&lt;/datos&gt;
+				&lt;/persona&gt;&lt;!--Amigo 2.3--&gt;
+			&lt;/persona&gt;&lt;!--Amigo 2--&gt;
+			&lt;persona&gt;
+				&lt;datos&gt;
+					&lt;nombre&gt;Fernando&lt;/nombre&gt;
+					&lt;apellidos&gt;Alonso&lt;/apellidos&gt;
+					&lt;nacimiento&gt;1981-07-29&lt;/nacimiento&gt;
+					&lt;lugarnacimiento&gt;Oviedo&lt;/lugarnacimiento&gt;
+					&lt;coordenadanacimiento&gt;
+						&lt;coordenada longitud="43.35665895768564" latitud="-5.867582332199682" altitud="5"/&gt;
+					&lt;/coordenadanacimiento&gt;
+					&lt;residencia&gt;Gijón&lt;/residencia&gt;
+					&lt;coordenadaresidencia&gt;
+						&lt;coordenada longitud="43.42867129406224" latitud="-5.8316237261054065" altitud="5"/&gt;
+					&lt;/coordenadaresidencia&gt;
+					&lt;foto&gt;multimedia/imagenfernando.jpg&lt;/foto&gt;		
+					&lt;comentarios&gt;EL plan&lt;/comentarios&gt;					
+				&lt;/datos&gt;
+				&lt;persona&gt;
+					&lt;datos&gt;
+						&lt;nombre&gt;Joe&lt;/nombre&gt;
+						&lt;apellidos&gt;Biden&lt;/apellidos&gt;
+						&lt;nacimiento&gt;1942-11-20&lt;/nacimiento&gt;
+						&lt;lugarnacimiento&gt;Scranton, Pensilvania&lt;/lugarnacimiento&gt;
+						&lt;coordenadanacimiento&gt;
+							&lt;coordenada longitud="41.41302684849627" latitud="-75.65403757691384" altitud="5"/&gt;
+						&lt;/coordenadanacimiento&gt;
+						&lt;residencia&gt;Washington DC&lt;/residencia&gt;
+						&lt;coordenadaresidencia&gt;
+							&lt;coordenada longitud="38.897559380650584" latitud="-77.03636886931733" altitud="5"/&gt;
+						&lt;/coordenadaresidencia&gt;
+						&lt;foto&gt;multimedia/imagenjoe.jpg&lt;/foto&gt;
+						&lt;comentarios&gt;Joe Biden the best POTUS&lt;/comentarios&gt;
+					&lt;/datos&gt;
+				&lt;/persona&gt;&lt;!--Amigo 3.1--&gt;
+				&lt;persona&gt;
+					&lt;datos&gt;
+						&lt;nombre&gt;Donald&lt;/nombre&gt;
+						&lt;apellidos&gt;Trump&lt;/apellidos&gt;
+						&lt;nacimiento&gt;1942-11-20&lt;/nacimiento&gt;
+						&lt;lugarnacimiento&gt;Nueva York&lt;/lugarnacimiento&gt;
+						&lt;coordenadanacimiento&gt;
+							&lt;coordenada longitud="40.70075201605041" latitud="-73.81654672328693" altitud="5"/&gt;
+						&lt;/coordenadanacimiento&gt;
+						&lt;residencia&gt;Mar-A-Lago, Florida&lt;/residencia&gt;
+						&lt;coordenadaresidencia&gt;
+							&lt;coordenada longitud="26.677006422305485" latitud="-80.03684059445307" altitud="5"/&gt;
+						&lt;/coordenadaresidencia&gt;
+						&lt;foto&gt;multimedia/imagentrump.jpg&lt;/foto&gt;
+						&lt;comentarios&gt;Go vote!&lt;/comentarios&gt;
+					&lt;/datos&gt;
+				&lt;/persona&gt;&lt;!--Amigo 3.2--&gt;
+				&lt;persona&gt;
+					&lt;datos&gt;
+						&lt;nombre&gt;Pablo&lt;/nombre&gt;
+						&lt;apellidos&gt;Motos&lt;/apellidos&gt;
+						&lt;nacimiento&gt;1965-08-31&lt;/nacimiento&gt;
+						&lt;lugarnacimiento&gt;Requena&lt;/lugarnacimiento&gt;
+						&lt;coordenadanacimiento&gt;
+							&lt;coordenada longitud="39.48818844959094" latitud="-1.0896447978179709" altitud="5"/&gt;
+						&lt;/coordenadanacimiento&gt;
+						&lt;residencia&gt;Madrid&lt;/residencia&gt;
+						&lt;coordenadaresidencia&gt;
+							&lt;coordenada longitud="40.41926055042326" latitud="-3.6889763053362543" altitud="5"/&gt;
+						&lt;/coordenadaresidencia&gt;
+						&lt;foto&gt;multimedia/imagenpablo.jpg&lt;/foto&gt;
+						&lt;comentarios&gt;La tarjeta del hormiguero&lt;/comentarios&gt;
+					&lt;/datos&gt;
+				&lt;/persona&gt;&lt;!--Amigo 3.3--&gt;
+			&lt;/persona&gt;&lt;!--Amigo 3--&gt;
+		&lt;/persona&gt;&lt;!--YO--&gt;
+	&lt;/personas&gt;
+&lt;/red&gt;</pre></main>
+
+</body></html>
